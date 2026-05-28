@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gaurav Confectionery – Rajendra Nagar, Nawada</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --saffron:#D4500A;
+  --gold:#E8981C;
+  --cream:#FFF8F0;
+  --maroon:#7A1B1B;
+  --darkbrown:#2C1208;
+  --lightcream:#FEF3E6;
+  --white:#FFFFFF;
+  --success:#2E7D32;
+  --warning:#E65100;
+  --danger:#C62828;
+  --text:#2C1208;
+  --muted:#7A5C3D;
+  --border:#E8D5B7;
+  --shadow:0 4px 20px rgba(44,18,8,0.12);
+  --shadow-lg:0 8px 40px rgba(44,18,8,0.18);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--text);min-height:100vh;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--lightcream);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
+
+/* TOP BANNER */
+.top-banner{background:var(--maroon);color:#FFE8C0;text-align:center;padding:7px 16px;font-size:13px;letter-spacing:.5px;}
+.top-banner span{color:var(--gold);}
+
+/* NAVBAR */
+.navbar{
+  background:var(--white);
+  border-bottom:3px solid var(--gold);
+  position:sticky;top:0;z-index:1000;
+  box-shadow:var(--shadow);
+}
+.nav-inner{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--saffron),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 3px 10px rgba(212,80,10,.35);}
+.logo-text h1{font-family:'Cinzel Decorative',serif;font-size:18px;color:var(--saffron);line-height:1.1;}
+.logo-text p{font-size:11px;color:var(--muted);font-family:'Poppins',sans-serif;}
+.nav-links{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.nav-btn{background:none;border:none;cursor:pointer;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:500;color:var(--text);padding:7px 14px;border-radius:8px;transition:.2s;}
+.nav-btn:hover,.nav-btn.active{background:var(--lightcream);color:var(--saffron);}
+.nav-btn.admin-btn{color:var(--maroon);border:1.5px solid var(--maroon);}
+.nav-btn.admin-btn:hover{background:var(--maroon);color:#fff;}
+.cart-btn{background:var(--saffron);color:#fff;border:none;padding:9px 18px;border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;transition:.2s;box-shadow:0 3px 10px rgba(212,80,10,.3);}
+.cart-btn:hover{background:var(--maroon);}
+.cart-count{background:#fff;color:var(--saffron);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,var(--darkbrown) 0%,var(--maroon) 50%,#8B2500 100%);
+  color:#fff;
+  padding:60px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background-image:repeating-linear-gradient(45deg,rgba(232,152,28,.07) 0,rgba(232,152,28,.07) 1px,transparent 0,transparent 50%);
+  background-size:20px 20px;
+}
+.hero-inner{position:relative;max-width:700px;margin:0 auto;}
+.hero-badge{display:inline-block;background:rgba(232,152,28,.2);border:1.5px solid var(--gold);color:var(--gold);padding:5px 18px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+.hero h2{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,5vw,46px);color:#FFE8C0;margin-bottom:10px;text-shadow:0 2px 10px rgba(0,0,0,.4);}
+.hero p{font-size:15px;color:rgba(255,232,192,.8);margin-bottom:24px;line-height:1.7;}
+.hero-branch-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.branch-select-btn{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:10px 20px;border-radius:10px;cursor:pointer;font-size:13.5px;font-family:'Poppins',sans-serif;transition:.2s;}
+.branch-select-btn:hover,.branch-select-btn.sel{background:var(--gold);border-color:var(--gold);color:var(--darkbrown);font-weight:600;}
+.hero-stats{display:flex;gap:30px;justify-content:center;margin-top:28px;flex-wrap:wrap;}
+.hero-stat{text-align:center;}
+.hero-stat strong{display:block;font-size:22px;color:var(--gold);font-family:'Playfair Display',serif;}
+.hero-stat span{font-size:12px;color:rgba(255,232,192,.7);}
+
+/* MAIN */
+.main-content{max-width:1200px;margin:0 auto;padding:30px 20px 100px;}
+
+/* SECTION HEADER */
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:10px;}
+.section-title{font-size:26px;color:var(--maroon);}
+.section-title span{color:var(--saffron);}
+.section-divider{height:3px;width:60px;background:linear-gradient(90deg,var(--saffron),var(--gold));border-radius:2px;margin:6px 0 0;}
+
+/* FILTER BAR */
+.filter-bar{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap;}
+.filter-pill{border:1.5px solid var(--border);background:var(--white);color:var(--muted);padding:7px 16px;border-radius:20px;cursor:pointer;font-size:13px;font-family:'Poppins',sans-serif;transition:.2s;}
+.filter-pill:hover,.filter-pill.active{background:var(--saffron);border-color:var(--saffron);color:#fff;}
+
+/* ITEMS GRID */
+.items-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
+.item-card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  transition:.25s;
+  box-shadow:0 2px 10px rgba(44,18,8,.07);
+}
+.item-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.item-img{
+  height:160px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:64px;
+  background:linear-gradient(135deg,var(--lightcream),#FFF0D6);
+  position:relative;
+}
+.item-badge{
+  position:absolute;top:10px;right:10px;
+  background:var(--gold);color:var(--darkbrown);
+  font-size:11px;font-weight:700;padding:3px 9px;border-radius:10px;
+}
+.item-badge.veg{background:#E8F5E9;color:#2E7D32;border:1px solid #A5D6A7;}
+.item-info{padding:14px;}
+.item-name{font-size:15px;font-weight:600;color:var(--darkbrown);margin-bottom:3px;}
+.item-desc{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.5;}
+.item-footer{display:flex;align-items:center;justify-content:space-between;}
+.item-price{font-size:17px;font-weight:700;color:var(--saffron);}
+.item-price small{font-size:11px;color:var(--muted);font-weight:400;}
+.add-btn{background:var(--saffron);color:#fff;border:none;width:34px;height:34px;border-radius:10px;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:.2s;font-family:'Poppins',sans-serif;}
+.add-btn:hover{background:var(--maroon);}
+.qty-control{display:flex;align-items:center;gap:6px;}
+.qty-btn{background:var(--lightcream);border:1.5px solid var(--border);width:28px;height:28px;border-radius:8px;cursor:pointer;font-size:16px;font-weight:700;color:var(--saffron);font-family:'Poppins',sans-serif;transition:.15s;}
+.qty-btn:hover{background:var(--saffron);color:#fff;border-color:var(--saffron);}
+.qty-num{font-size:14px;font-weight:600;min-width:20px;text-align:center;color:var(--darkbrown);}
+
+/* CART SIDEBAR */
+.cart-overlay{position:fixed;inset:0;background:rgba(44,18,8,.45);z-index:2000;opacity:0;pointer-events:none;transition:.3s;}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+.cart-sidebar{
+  position:fixed;right:-420px;top:0;bottom:0;width:380px;max-width:95vw;
+  background:var(--white);
+  box-shadow:-5px 0 30px rgba(44,18,8,.2);
+  z-index:2001;
+  transition:.35s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;
+}
+.cart-sidebar.open{right:0;}
+.cart-header{background:var(--maroon);color:#fff;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;}
+.cart-header h3{font-size:18px;}
+.cart-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;}
+.cart-branch-info{background:var(--lightcream);padding:10px 20px;font-size:13px;color:var(--muted);border-bottom:1px solid var(--border);}
+.cart-branch-info strong{color:var(--saffron);}
+.cart-items{flex:1;overflow-y:auto;padding:14px 20px;}
+.cart-empty{text-align:center;padding:50px 20px;color:var(--muted);}
+.cart-empty .empty-icon{font-size:50px;margin-bottom:12px;}
+.cart-item{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);}
+.cart-item-icon{font-size:28px;width:42px;height:42px;background:var(--lightcream);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cart-item-info{flex:1;}
+.cart-item-name{font-size:14px;font-weight:600;color:var(--darkbrown);}
+.cart-item-price{font-size:13px;color:var(--muted);}
+.cart-item-qty{display:flex;align-items:center;gap:6px;}
+.cart-footer{padding:16px 20px;border-top:2px solid var(--border);}
+.cart-total-row{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:6px;}
+.cart-total-row.big{font-size:18px;font-weight:700;color:var(--darkbrown);margin-bottom:14px;}
+.checkout-btn{width:100%;background:linear-gradient(135deg,var(--saffron),var(--gold));color:#fff;border:none;padding:14px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;transition:.2s;box-shadow:0 4px 15px rgba(212,80,10,.3);}
+.checkout-btn:hover{background:linear-gradient(135deg,var(--maroon),var(--saffron));}
+.wa-order-btn{width:100%;background:#25D366;color:#fff;border:none;padding:11px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.wa-order-btn:hover{background:#128C7E;}
+
+/* BRANCHES */
+.branches-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.branch-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(44,18,8,.07);transition:.2s;cursor:pointer;}
+.branch-card:hover{border-color:var(--saffron);box-shadow:var(--shadow);}
+.branch-card.selected{border:2.5px solid var(--saffron);background:linear-gradient(135deg,#FFF8F0,#FEF0D8);}
+.branch-num{width:40px;height:40px;background:var(--saffron);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;margin-bottom:14px;}
+.branch-card.selected .branch-num{background:var(--maroon);}
+.branch-name{font-size:17px;font-weight:700;color:var(--darkbrown);margin-bottom:4px;}
+.branch-addr{font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.5;}
+.branch-tag{display:inline-block;padding:3px 12px;border-radius:10px;font-size:11px;font-weight:600;}
+.branch-tag.open{background:#E8F5E9;color:#2E7D32;}
+.branch-tag.main{background:#FFF3E0;color:#E65100;}
+.branch-hours{font-size:12px;color:var(--muted);margin-top:8px;}
+.branch-hours strong{color:var(--darkbrown);}
+.sel-branch-btn{margin-top:14px;width:100%;background:var(--saffron);color:#fff;border:none;padding:10px;border-radius:10px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;transition:.2s;}
+.sel-branch-btn:hover{background:var(--maroon);}
+
+/* STOCK MANAGEMENT */
+.stock-panel{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow);}
+.stock-summary{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:28px;}
+.stock-stat{background:var(--lightcream);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--border);}
+.stock-stat strong{display:block;font-size:26px;font-family:'Playfair Display',serif;color:var(--saffron);}
+.stock-stat span{font-size:12px;color:var(--muted);}
+.stock-stat.warn strong{color:var(--warning);}
+.stock-stat.danger strong{color:var(--danger);}
+.stock-controls{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;align-items:center;}
+.stock-controls input,.stock-controls select{border:1.5px solid var(--border);background:var(--white);padding:9px 14px;border-radius:10px;font-size:13.5px;font-family:'Poppins',sans-serif;color:var(--text);outline:none;}
+.stock-controls input:focus,.stock-controls select:focus{border-color:var(--saffron);}
+.add-stock-btn{background:var(--success);color:#fff;border:none;padding:10px 20px;border-radius:10px;cursor:pointer;font-size:13.5px;font-weight:600;font-family:'Poppins',sans-serif;white-space:nowrap;}
+.stock-table-wrap{overflow-x:auto;}
+.stock-table{width:100%;border-collapse:collapse;font-size:14px;}
+.stock-table th{background:var(--darkbrown);color:#FFE8C0;padding:11px 14px;text-align:left;font-family:'Playfair Display',serif;font-size:14px;}
+.stock-table th:first-child{border-radius:8px 0 0 0;}
+.stock-table th:last-child{border-radius:0 8px 0 0;}
+.stock-table td{padding:11px 14px;border-bottom:1px solid var(--border);}
+.stock-table tr:hover td{background:var(--lightcream);}
+.stock-level{display:flex;align-items:center;gap:10px;}
+.stock-bar-wrap{flex:1;background:#F0E8D8;border-radius:4px;height:8px;min-width:80px;}
+.stock-bar{height:8px;border-radius:4px;transition:.4s;}
+.stock-bar.high{background:linear-gradient(90deg,#4CAF50,#81C784);}
+.stock-bar.med{background:linear-gradient(90deg,var(--gold),#FFB74D);}
+.stock-bar.low{background:linear-gradient(90deg,var(--danger),#EF9A9A);}
+.status-pill{padding:3px 10px;border-radius:10px;font-size:11px;font-weight:700;}
+.status-pill.ok{background:#E8F5E9;color:#2E7D32;}
+.status-pill.low{background:#FFF3E0;color:#E65100;}
+.status-pill.out{background:#FFEBEE;color:#C62828;}
+.stock-action-btns{display:flex;gap:6px;}
+.s-btn{border:1.5px solid var(--border);background:var(--white);padding:5px 10px;border-radius:8px;cursor:pointer;font-size:12px;font-family:'Poppins',sans-serif;transition:.15s;}
+.s-btn.plus{border-color:#4CAF50;color:#2E7D32;}
+.s-btn.plus:hover{background:#4CAF50;color:#fff;}
+.s-btn.minus{border-color:var(--danger);color:var(--danger);}
+.s-btn.minus:hover{background:var(--danger);color:#fff;}
+
+/* ORDER MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(44,18,8,.55);z-index:3000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:.3s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{background:var(--white);border-radius:20px;max-width:480px;width:100%;box-shadow:var(--shadow-lg);overflow:hidden;transform:scale(.95);transition:.3s;}
+.modal-overlay.open .modal-box{transform:scale(1);}
+.modal-header{background:linear-gradient(135deg,var(--saffron),var(--gold));color:#fff;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;}
+.modal-header h3{font-size:20px;}
+.modal-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:18px;font-family:'Poppins',sans-serif;}
+.modal-body{padding:24px;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1.5px solid var(--border);background:var(--cream);padding:11px 14px;border-radius:10px;font-size:14px;font-family:'Poppins',sans-serif;color:var(--text);outline:none;transition:.2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--saffron);background:#fff;}
+.modal-order-summary{background:var(--lightcream);border-radius:12px;padding:14px;margin-bottom:16px;font-size:13px;}
+.modal-order-summary div{display:flex;justify-content:space-between;padding:3px 0;}
+.modal-order-summary .total-line{font-weight:700;font-size:15px;border-top:1px solid var(--border);padding-top:8px;margin-top:6px;}
+.confirm-order-btn{width:100%;background:linear-gradient(135deg,var(--saffron),var(--gold));color:#fff;border:none;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;}
+.confirm-order-btn:hover{opacity:.9;}
+
+/* SUCCESS */
+.success-modal{text-align:center;padding:40px 24px;}
+.success-icon{font-size:64px;margin-bottom:16px;}
+.success-modal h3{font-size:22px;color:var(--success);margin-bottom:8px;}
+.success-modal p{font-size:14px;color:var(--muted);margin-bottom:24px;}
+.success-wa-btn{background:#25D366;color:#fff;border:none;padding:13px 30px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;display:inline-flex;align-items:center;gap:10px;}
+
+/* ORDERS TABLE */
+.orders-section{margin-top:30px;}
+.order-item-row{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;}
+.order-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.order-id{font-size:13px;font-weight:600;color:var(--muted);}
+.order-total{font-size:16px;font-weight:700;color:var(--saffron);}
+.order-status{padding:4px 12px;border-radius:10px;font-size:12px;font-weight:600;}
+.order-status.pending{background:#FFF3E0;color:#E65100;}
+.order-status.confirmed{background:#E8F5E9;color:#2E7D32;}
+.order-items-list{margin-top:8px;font-size:13px;color:var(--muted);}
+.no-orders{text-align:center;padding:30px;color:var(--muted);font-size:14px;}
+
+/* TABS */
+.tab-nav{display:flex;gap:6px;background:var(--lightcream);padding:6px;border-radius:14px;margin-bottom:28px;flex-wrap:wrap;}
+.tab-btn{flex:1;min-width:80px;background:none;border:none;padding:10px 12px;border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:500;color:var(--muted);transition:.2s;}
+.tab-btn:hover{background:rgba(212,80,10,.08);color:var(--saffron);}
+.tab-btn.active{background:var(--white);color:var(--saffron);box-shadow:0 2px 10px rgba(44,18,8,.1);font-weight:600;}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+
+/* WHATSAPP FLOAT */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:999;
+  display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+}
+.wa-float-tooltip{
+  background:var(--darkbrown);color:#fff;
+  padding:8px 14px;border-radius:10px;font-size:13px;font-weight:500;
+  white-space:nowrap;opacity:0;transform:translateX(10px);
+  transition:.2s;pointer-events:none;
+}
+.wa-float:hover .wa-float-tooltip{opacity:1;transform:translateX(0);}
+.wa-float-btn{
+  width:60px;height:60px;border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.45);
+  cursor:pointer;transition:.2s;text-decoration:none;
+}
+.wa-float-btn:hover{background:#128C7E;transform:scale(1.08);}
+.wa-float-btn svg{width:32px;height:32px;fill:#fff;}
+
+/* NOTIFICATION */
+.notification{
+  position:fixed;top:80px;right:20px;z-index:5000;
+  background:var(--darkbrown);color:#FFE8C0;
+  padding:12px 20px;border-radius:12px;font-size:14px;
+  box-shadow:var(--shadow-lg);
+  transform:translateX(120%);transition:.3s;
+  max-width:280px;
+}
+.notification.show{transform:translateX(0);}
+.notification .n-icon{margin-right:8px;}
+
+/* FOOTER */
+footer{background:var(--darkbrown);color:#FFE8C0;padding:30px 20px;text-align:center;margin-top:0;}
+footer h3{font-family:'Cinzel Decorative',serif;font-size:18px;color:var(--gold);margin-bottom:8px;}
+footer p{font-size:13px;opacity:.8;line-height:1.8;}
+footer .footer-links{display:flex;gap:20px;justify-content:center;margin:14px 0;flex-wrap:wrap;}
+footer .footer-links a{color:var(--gold);text-decoration:none;font-size:13px;}
+.footer-bottom{margin-top:20px;padding-top:14px;border-top:1px solid rgba(255,232,192,.15);font-size:12px;opacity:.6;}
+
+/* Responsive */
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .hero h2{font-size:22px;}
+  .cart-sidebar{width:100%;right:-100%;}
+  .items-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+}
+
+/* Admin password gate */
+.admin-gate{text-align:center;padding:60px 20px;}
+.admin-gate h3{font-size:24px;color:var(--maroon);margin-bottom:8px;}
+.admin-gate p{color:var(--muted);font-size:14px;margin-bottom:24px;}
+.admin-gate input{border:1.5px solid var(--border);padding:11px 18px;border-radius:12px;font-size:15px;font-family:'Poppins',sans-serif;width:220px;outline:none;text-align:center;letter-spacing:4px;}
+.admin-gate input:focus{border-color:var(--saffron);}
+.admin-gate button{display:block;margin:12px auto 0;background:var(--maroon);color:#fff;border:none;padding:11px 28px;border-radius:12px;font-size:15px;cursor:pointer;font-family:'Poppins',sans-serif;}
+.admin-error{color:var(--danger);font-size:13px;margin-top:8px;display:none;}
+</style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<div class="top-banner">
+  🎉 Special offers on bulk orders! Call us: <span>+91 98765 43210</span> &nbsp;|&nbsp; Free delivery above ₹500 within Nawada
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-icon">🍬</div>
+      <div class="logo-text">
+        <h1>Gaurav Confectionery</h1>
+        <p>Rajendra Nagar, Nawada · Est. 1995</p>
+      </div>
+    </div>
+    <div class="nav-links">
+      <button class="nav-btn active" onclick="showTab('menu')">🍭 Menu</button>
+      <button class="nav-btn" onclick="showTab('branches')">🏪 Branches</button>
+      <button class="nav-btn" onclick="showTab('orders')">📦 Orders</button>
+      <button class="nav-btn admin-btn" onclick="showTab('admin')">🔐 Admin</button>
+    </div>
+    <button class="cart-btn" onclick="toggleCart()">
+      🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🌟 Pure &amp; Authentic Indian Sweets</div>
+    <h2>Gaurav Confectionery</h2>
+    <p>Rajendra Nagar, Nawada · Serving the finest sweets &amp; snacks since 1995<br/>Fresh made daily · 3 convenient branches</p>
+    <div class="hero-branch-btns">
+      <button class="branch-select-btn sel" onclick="selectBranch(0,this)">🏠 Main Branch</button>
+      <button class="branch-select-btn" onclick="selectBranch(1,this)">🚂 Station Road</button>
+      <button class="branch-select-btn" onclick="selectBranch(2,this)">🏛️ Market Chowk</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>30+</strong><span>Menu Items</span></div>
+      <div class="hero-stat"><strong>3</strong><span>Branches</span></div>
+      <div class="hero-stat"><strong>1000+</strong><span>Happy Customers</span></div>
+      <div class="hero-stat"><strong>28yr</strong><span>Trusted Since</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="main-content">
+  <!-- TAB NAV -->
+  <div class="tab-nav">
+    <button class="tab-btn active" id="tab-menu" onclick="showTab('menu')">🍭 Menu &amp; Order</button>
+    <button class="tab-btn" id="tab-branches" onclick="showTab('branches')">🏪 Our Branches</button>
+    <button class="tab-btn" id="tab-orders" onclick="showTab('orders')">📦 Order History</button>
+    <button class="tab-btn" id="tab-admin" onclick="showTab('admin')">🔐 Admin Panel</button>
+  </div>
+
+  <!-- MENU TAB -->
+  <div class="tab-content active" id="content-menu">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Our <span>Sweet Menu</span></div>
+        <div class="section-divider"></div>
+      </div>
+      <div style="font-size:13px;color:var(--muted);">Ordering from: <strong id="orderingFrom" style="color:var(--saffron);">Main Branch</strong></div>
+    </div>
+    <div class="filter-bar" id="filterBar"></div>
+    <div class="items-grid" id="itemsGrid"></div>
+  </div>
+
+  <!-- BRANCHES TAB -->
+  <div class="tab-content" id="content-branches">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Our <span>3 Branches</span></div>
+        <div class="section-divider"></div>
+      </div>
+    </div>
+    <div class="branches-grid" id="branchesGrid"></div>
+  </div>
+
+  <!-- ORDERS TAB -->
+  <div class="tab-content" id="content-orders">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Order <span>History</span></div>
+        <div class="section-divider"></div>
+      </div>
+      <button onclick="clearOrders()" style="border:1.5px solid var(--danger);background:none;color:var(--danger);padding:8px 16px;border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:13px;">🗑 Clear History</button>
+    </div>
+    <div id="ordersContainer"></div>
+  </div>
+
+  <!-- ADMIN TAB -->
+  <div class="tab-content" id="content-admin">
+    <div id="adminGate">
+      <div class="admin-gate">
+        <div style="font-size:60px;margin-bottom:16px;">🔐</div>
+        <h3>Admin Panel</h3>
+        <p>Enter admin password to manage stock &amp; inventory</p>
+        <input type="password" id="adminPwdInput" placeholder="••••••" onkeydown="if(event.key==='Enter')checkAdmin()"/>
+        <button onclick="checkAdmin()">Unlock Panel</button>
+        <div class="admin-error" id="adminErr">❌ Incorrect password. Try: admin123</div>
+      </div>
+    </div>
+    <div id="adminPanel" style="display:none;">
+      <div class="section-header">
+        <div>
+          <div class="section-title">📦 Stock <span>Management</span></div>
+          <div class="section-divider"></div>
+        </div>
+        <button onclick="lockAdmin()" style="border:1.5px solid var(--muted);background:none;color:var(--muted);padding:8px 16px;border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:13px;">🔒 Lock Panel</button>
+      </div>
+
+      <!-- BRANCH STOCK TABS -->
+      <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;">
+        <button class="filter-pill active" id="stockBranchBtn0" onclick="selectStockBranch(0)">🏠 Main Branch</button>
+        <button class="filter-pill" id="stockBranchBtn1" onclick="selectStockBranch(1)">🚂 Station Road</button>
+        <button class="filter-pill" id="stockBranchBtn2" onclick="selectStockBranch(2)">🏛️ Market Chowk</button>
+      </div>
+
+      <!-- SUMMARY STATS -->
+      <div class="stock-summary" id="stockSummary"></div>
+
+      <!-- ADD STOCK FORM -->
+      <div class="stock-panel" style="margin-bottom:20px;">
+        <h3 style="font-size:17px;color:var(--maroon);margin-bottom:16px;">➕ Update Raw Material Stock</h3>
+        <div class="stock-controls">
+          <select id="stockMaterial">
+            <option value="">Select Material</option>
+          </select>
+          <input type="number" id="stockQty" placeholder="Quantity" min="0" style="width:120px;"/>
+          <select id="stockAction">
+            <option value="add">Add Stock</option>
+            <option value="set">Set Stock</option>
+            <option value="reduce">Reduce Stock</option>
+          </select>
+          <button class="add-stock-btn" onclick="updateStock()">Update</button>
+        </div>
+      </div>
+
+      <!-- STOCK TABLE -->
+      <div class="stock-panel">
+        <h3 style="font-size:17px;color:var(--maroon);margin-bottom:16px;">📋 Raw Materials Inventory</h3>
+        <div class="stock-table-wrap">
+          <table class="stock-table" id="stockTable">
+            <thead>
+              <tr>
+                <th>Material</th>
+                <th>Current Stock</th>
+                <th>Unit</th>
+                <th>Min Required</th>
+                <th>Status</th>
+                <th>Quick Update</th>
+              </tr>
+            </thead>
+            <tbody id="stockTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PRODUCT STOCK -->
+      <div class="stock-panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;color:var(--maroon);margin-bottom:16px;">🍬 Product Availability Control</h3>
+        <div id="productStockGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>🛒 Your Cart</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-branch-info">
+    Branch: <strong id="cartBranchName">Main Branch</strong>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="empty-icon">🛒</div>
+      <p>Your cart is empty.<br/>Add some delicious sweets!</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+    <div class="cart-total-row"><span>Delivery</span><span id="cartDelivery">₹30</span></div>
+    <div class="cart-total-row big"><span>Total</span><span id="cartTotal">₹0</span></div>
+    <button class="checkout-btn" onclick="openCheckout()">Place Order →</button>
+    <button class="wa-order-btn" onclick="orderViaWhatsApp()">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.854L0 24l6.338-1.508A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.654-.492-5.188-1.352l-.371-.218-3.844.915.977-3.751-.24-.385A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Order via WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- ORDER MODAL -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>📝 Place Your Order</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="custName" placeholder="Enter your name"/>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="custPhone" placeholder="+91 XXXXX XXXXX"/>
+      </div>
+      <div class="form-group">
+        <label>Delivery Address</label>
+        <textarea id="custAddr" rows="2" placeholder="Enter delivery address..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Branch</label>
+        <select id="orderBranchSel">
+          <option value="0">Main Branch – Rajendra Nagar</option>
+          <option value="1">Station Road Branch</option>
+          <option value="2">Market Chowk Branch</option>
+        </select>
+      </div>
+      <div class="modal-order-summary" id="modalSummary"></div>
+      <button class="confirm-order-btn" onclick="confirmOrder()">✅ Confirm Order</button>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-box">
+    <div class="success-modal">
+      <div class="success-icon">🎉</div>
+      <h3>Order Placed Successfully!</h3>
+      <p id="successMsg">Your order has been placed. We'll prepare it fresh for you!</p>
+      <button class="success-wa-btn" onclick="trackOnWA()">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.854L0 24l6.338-1.508A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.654-.492-5.188-1.352l-.371-.218-3.844.915.977-3.751-.24-.385A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Track on WhatsApp
+      </button>
+      <button onclick="closeSuccess()" style="display:block;margin:12px auto 0;background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px;font-family:'Poppins',sans-serif;">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+
+<!-- NOTIFICATION -->
+<div class="notification" id="notification"><span class="n-icon"></span><span id="notifMsg"></span></div>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <div class="wa-float-tooltip">Chat on WhatsApp 💬</div>
+  <a class="wa-float-btn" id="waFloatBtn" href="https://wa.me/919876543210" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.854L0 24l6.338-1.508A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.654-.492-5.188-1.352l-.371-.218-3.844.915.977-3.751-.24-.385A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <h3>🍬 Gaurav Confectionery</h3>
+  <p>Rajendra Nagar, Nawada, Bihar · Open 7 days a week<br/>
+  Making your celebrations sweeter since 1995</p>
+  <div class="footer-links">
+    <a href="tel:+919876543210">📞 +91 98765 43210</a>
+    <a href="https://wa.me/919876543210" target="_blank">💬 WhatsApp</a>
+    <a href="mailto:gauravconfectionery@gmail.com">📧 Email Us</a>
+  </div>
+  <div class="footer-bottom">© 2025 Gaurav Confectionery · All Rights Reserved · Rajendra Nagar, Nawada</div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════
+//  DATA
+// ═══════════════════════════════════════
+const WHATSAPP = '919876543210';
+
+const BRANCHES = [
+  { id:0, name:'Main Branch', short:'Main Branch', icon:'🏠', addr:'Rajendra Nagar, Nawada, Bihar – 805110', hours:'7:00 AM – 10:00 PM', tag:'main', tagLabel:'Main Store', phone:'+91 98765 43210' },
+  { id:1, name:'Station Road Branch', short:'Station Road', icon:'🚂', addr:'Near Railway Station, Station Road, Nawada, Bihar – 805110', hours:'8:00 AM – 9:00 PM', tag:'open', tagLabel:'Open Now', phone:'+91 98765 43211' },
+  { id:2, name:'Market Chowk Branch', short:'Market Chowk', icon:'🏛️', addr:'Market Chowk, Main Road, Nawada, Bihar – 805110', hours:'7:30 AM – 9:30 PM', tag:'open', tagLabel:'Open Now', phone:'+91 98765 43212' }
+];
+
+const CATEGORIES = ['All','Snacks','Sweets','Bengali Sweets','Mithai','Drinks'];
+
+const ITEMS = [
+  { id:1, name:'Samosa', emoji:'🥟', cat:'Snacks', price:15, unit:'piece', desc:'Crispy fried pastry with spiced potato filling', veg:true, popular:true },
+  { id:2, name:'Rasgulla', emoji:'🍡', cat:'Bengali Sweets', price:25, unit:'piece', desc:'Soft spongy cottage cheese balls in sugar syrup', veg:true, popular:true },
+  { id:3, name:'Gulab Jamun', emoji:'🟤', cat:'Sweets', price:20, unit:'piece', desc:'Soft khoya dumplings soaked in rose-flavored syrup', veg:true, popular:true },
+  { id:4, name:'Jalebi', emoji:'🍥', cat:'Sweets', price:120, unit:'250g', desc:'Crispy spiral sweets soaked in sugar syrup', veg:true },
+  { id:5, name:'Barfi', emoji:'🍫', cat:'Mithai', price:40, unit:'piece', desc:'Dense milk-based sweet with cardamom flavor', veg:true },
+  { id:6, name:'Motichoor Ladoo', emoji:'🟡', cat:'Mithai', price:30, unit:'piece', desc:'Traditional round sweets made of fine gram flour', veg:true, popular:true },
+  { id:7, name:'Kaju Katli', emoji:'💎', cat:'Mithai', price:80, unit:'piece', desc:'Premium cashew fudge with edible silver coating', veg:true },
+  { id:8, name:'Peda', emoji:'🍮', cat:'Mithai', price:20, unit:'piece', desc:'Rich milk-based fudge with saffron & cardamom', veg:true },
+  { id:9, name:'Sandesh', emoji:'🍯', cat:'Bengali Sweets', price:35, unit:'piece', desc:'Fresh cottage cheese sweet with delicate flavor', veg:true },
+  { id:10, name:'Rasmalai', emoji:'🥛', cat:'Bengali Sweets', price:50, unit:'piece', desc:'Cottage cheese patties in thickened saffron milk', veg:true, popular:true },
+  { id:11, name:'Kheer', emoji:'🍚', cat:'Sweets', price:60, unit:'bowl', desc:'Creamy rice pudding with nuts & saffron', veg:true },
+  { id:12, name:'Aloo Tikki', emoji:'🥔', cat:'Snacks', price:20, unit:'piece', desc:'Spiced potato patty served with chutneys', veg:true },
+  { id:13, name:'Sev Puri', emoji:'🫓', cat:'Snacks', price:30, unit:'plate', desc:'Crispy puris with sweet & tangy toppings', veg:true },
+  { id:14, name:'Mathri', emoji:'🫓', cat:'Snacks', price:80, unit:'250g', desc:'Crispy savory crackers with spices', veg:true },
+  { id:15, name:'Lassi', emoji:'🥤', cat:'Drinks', price:40, unit:'glass', desc:'Chilled sweet yogurt drink – plain or rose', veg:true },
+  { id:16, name:'Rabri', emoji:'🍨', cat:'Sweets', price:70, unit:'bowl', desc:'Thick sweetened condensed milk dessert', veg:true },
+];
+
+const RAW_MATERIALS = [
+  { id:'sugar',   name:'Sugar',         unit:'kg',    minQty:20 },
+  { id:'milk',    name:'Milk',          unit:'liters',minQty:30 },
+  { id:'maida',   name:'Maida (Flour)', unit:'kg',    minQty:15 },
+  { id:'besan',   name:'Besan',         unit:'kg',    minQty:10 },
+  { id:'ghee',    name:'Ghee',          unit:'kg',    minQty:5  },
+  { id:'khoya',   name:'Khoya/Mawa',    unit:'kg',    minQty:8  },
+  { id:'sooji',   name:'Semolina (Sooji)',unit:'kg',  minQty:5  },
+  { id:'paneer',  name:'Paneer',        unit:'kg',    minQty:6  },
+  { id:'elaichi', name:'Cardamom',      unit:'grams', minQty:200},
+  { id:'saffron', name:'Saffron',       unit:'grams', minQty:50 },
+  { id:'cashew',  name:'Cashew (Kaju)', unit:'kg',    minQty:3  },
+  { id:'oil',     name:'Cooking Oil',   unit:'liters',minQty:10 },
+  { id:'rosewater',name:'Rose Water',   unit:'liters',minQty:2  },
+  { id:'dryfruit',name:'Dry Fruit Mix', unit:'kg',    minQty:4  },
+  { id:'potato',  name:'Potatoes',      unit:'kg',    minQty:20 },
+  { id:'dahi',    name:'Curd/Dahi',     unit:'liters',minQty:5  },
+];
+
+// ═══════════════════════════════════════
+//  STATE (localStorage backed)
+// ═══════════════════════════════════════
+let selectedBranch = 0;
+let activeFilter = 'All';
+let cart = {};
+let adminUnlocked = false;
+let stockBranchIdx = 0;
+let lastOrderId = null;
+let lastOrderCustomer = null;
+
+function loadState(){
+  try{ cart = JSON.parse(localStorage.getItem('gc_cart')||'{}'); }catch(e){ cart={}; }
+}
+function saveCart(){ localStorage.setItem('gc_cart', JSON.stringify(cart)); }
+
+function getStock(branchIdx){
+  const key = 'gc_stock_'+branchIdx;
+  try{
+    const s = JSON.parse(localStorage.getItem(key)||'null');
+    if(s) return s;
+  }catch(e){}
+  // Default stock
+  const def = {};
+  RAW_MATERIALS.forEach(m=>{ def[m.id] = m.minQty * 3; });
+  return def;
+}
+function saveStock(branchIdx, data){ localStorage.setItem('gc_stock_'+branchIdx, JSON.stringify(data)); }
+
+function getProductAvail(branchIdx){
+  const key = 'gc_avail_'+branchIdx;
+  try{
+    const s = JSON.parse(localStorage.getItem(key)||'null');
+    if(s) return s;
+  }catch(e){}
+  const def = {};
+  ITEMS.forEach(i=>{ def[i.id] = true; });
+  return def;
+}
+function saveProductAvail(branchIdx,data){ localStorage.setItem('gc_avail_'+branchIdx, JSON.stringify(data)); }
+
+function getOrders(){
+  try{ return JSON.parse(localStorage.getItem('gc_orders')||'[]'); }catch(e){ return []; }
+}
+function saveOrders(orders){ localStorage.setItem('gc_orders', JSON.stringify(orders)); }
+
+// ═══════════════════════════════════════
+//  TABS
+// ═══════════════════════════════════════
+function showTab(name){
+  document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el=>el.classList.remove('active'));
+  document.getElementById('content-'+name).classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(el=>el.classList.remove('active'));
+  if(name==='orders') renderOrders();
+  if(name==='admin') renderAdminPanel();
+}
+
+// ═══════════════════════════════════════
+//  BRANCH SELECT
+// ═══════════════════════════════════════
+function selectBranch(idx, btn){
+  selectedBranch = idx;
+  document.querySelectorAll('.branch-select-btn').forEach(b=>b.classList.remove('sel'));
+  if(btn) btn.classList.add('sel');
+  document.getElementById('orderingFrom').textContent = BRANCHES[idx].name;
+  document.getElementById('cartBranchName').textContent = BRANCHES[idx].name;
+  renderItems();
+  renderBranches();
+  notify('🏪 Switched to '+BRANCHES[idx].name, '✅');
+}
+
+// ═══════════════════════════════════════
+//  ITEMS / MENU
+// ═══════════════════════════════════════
+function renderFilters(){
+  const bar = document.getElementById('filterBar');
+  bar.innerHTML = CATEGORIES.map(c=>
+    `<button class="filter-pill ${c===activeFilter?'active':''}" onclick="filterItems('${c}')">${c}</button>`
+  ).join('');
+}
+
+function filterItems(cat){
+  activeFilter = cat;
+  renderFilters();
+  renderItems();
+}
+
+function renderItems(){
+  const avail = getProductAvail(selectedBranch);
+  const grid = document.getElementById('itemsGrid');
+  const filtered = activeFilter==='All' ? ITEMS : ITEMS.filter(i=>i.cat===activeFilter);
+  grid.innerHTML = filtered.map(item=>{
+    const qty = cart[item.id]||0;
+    const isAvail = avail[item.id]!==false;
+    return `<div class="item-card" style="${!isAvail?'opacity:.55;':''}">
+      <div class="item-img">
+        ${item.emoji}
+        ${item.popular?'<span class="item-badge">⭐ Popular</span>':''}
+      </div>
+      <div class="item-info">
+        <div class="item-name">${item.name} ${item.veg?'<span style="color:#2E7D32;font-size:11px;">🟢</span>':''}</div>
+        <div class="item-desc">${item.desc}</div>
+        <div class="item-footer">
+          <div class="item-price">₹${item.price} <small>/ ${item.unit}</small></div>
+          ${!isAvail ? '<span style="font-size:12px;color:#C62828;font-weight:600;">Out of Stock</span>' :
+          qty===0 ?
+            `<button class="add-btn" onclick="addToCart(${item.id})">+</button>` :
+            `<div class="qty-control">
+              <button class="qty-btn" onclick="changeQty(${item.id},-1)">−</button>
+              <span class="qty-num">${qty}</span>
+              <button class="qty-btn" onclick="changeQty(${item.id},1)">+</button>
+            </div>`
+          }
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function addToCart(id){
+  cart[id] = (cart[id]||0)+1;
+  saveCart(); updateCartCount(); renderItems(); renderCartSidebar();
+}
+function changeQty(id, delta){
+  cart[id] = Math.max(0, (cart[id]||0)+delta);
+  if(cart[id]===0) delete cart[id];
+  saveCart(); updateCartCount(); renderItems(); renderCartSidebar();
+}
+function updateCartCount(){
+  const total = Object.values(cart).reduce((s,v)=>s+v,0);
+  document.getElementById('cartCount').textContent = total;
+}
+
+// ═══════════════════════════════════════
+//  CART
+// ═══════════════════════════════════════
+function toggleCart(){
+  const overlay = document.getElementById('cartOverlay');
+  const sidebar = document.getElementById('cartSidebar');
+  overlay.classList.toggle('open');
+  sidebar.classList.toggle('open');
+  renderCartSidebar();
+}
+
+function renderCartSidebar(){
+  const container = document.getElementById('cartItems');
+  const footer = document.getElementById('cartFooter');
+  const keys = Object.keys(cart).map(Number).filter(id=>cart[id]>0);
+  if(keys.length===0){
+    container.innerHTML = `<div class="cart-empty"><div class="empty-icon">🛒</div><p>Your cart is empty.<br/>Add some delicious sweets!</p></div>`;
+    footer.style.display='none'; return;
+  }
+  let subtotal = 0;
+  container.innerHTML = keys.map(id=>{
+    const item = ITEMS.find(i=>i.id===id);
+    const qty = cart[id];
+    const lineTotal = item.price * qty;
+    subtotal += lineTotal;
+    return `<div class="cart-item">
+      <div class="cart-item-icon">${item.emoji}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">₹${item.price} × ${qty} = ₹${lineTotal}</div>
+      </div>
+      <div class="cart-item-qty">
+        <button class="qty-btn" onclick="changeQty(${id},-1)">−</button>
+        <span class="qty-num">${qty}</span>
+        <button class="qty-btn" onclick="changeQty(${id},1)">+</button>
+      </div>
+    </div>`;
+  }).join('');
+  const delivery = subtotal >= 500 ? 0 : 30;
+  document.getElementById('cartSubtotal').textContent = '₹'+subtotal;
+  document.getElementById('cartDelivery').textContent = delivery===0?'FREE':'₹'+delivery;
+  document.getElementById('cartTotal').textContent = '₹'+(subtotal+delivery);
+  footer.style.display='block';
+}
+
+// ═══════════════════════════════════════
+//  CHECKOUT / ORDER
+// ═══════════════════════════════════════
+function openCheckout(){
+  const keys = Object.keys(cart).map(Number).filter(id=>cart[id]>0);
+  if(keys.length===0){ notify('Cart is empty!','❌'); return; }
+  // Build summary
+  let subtotal = 0;
+  let summaryHTML = keys.map(id=>{
+    const item = ITEMS.find(i=>i.id===id);
+    const qty = cart[id];
+    const lt = item.price*qty; subtotal+=lt;
+    return `<div><span>${item.name} ×${qty}</span><span>₹${lt}</span></div>`;
+  }).join('');
+  const delivery = subtotal>=500?0:30;
+  summaryHTML += `<div class="total-line"><span>Total</span><span>₹${subtotal+delivery}</span></div>`;
+  document.getElementById('modalSummary').innerHTML = summaryHTML;
+  document.getElementById('orderBranchSel').value = selectedBranch;
+  document.getElementById('orderModal').classList.add('open');
+}
+
+function closeModal(){
+  document.getElementById('orderModal').classList.remove('open');
+}
+
+function confirmOrder(){
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const addr = document.getElementById('custAddr').value.trim();
+  const branchIdx = parseInt(document.getElementById('orderBranchSel').value);
+  if(!name){ notify('Please enter your name','❌'); return; }
+  if(!phone){ notify('Please enter phone number','❌'); return; }
+  if(!addr){ notify('Please enter delivery address','❌'); return; }
+
+  const keys = Object.keys(cart).map(Number).filter(id=>cart[id]>0);
+  let subtotal = 0;
+  const items = keys.map(id=>{
+    const item = ITEMS.find(i=>i.id===id);
+    const qty = cart[id]; subtotal+=item.price*qty;
+    return { name:item.name, qty, price:item.price, total:item.price*qty };
+  });
+  const delivery = subtotal>=500?0:30;
+  const orderId = 'GC-'+Date.now().toString().slice(-6);
+  const order = {
+    id:orderId, name, phone, addr,
+    branch: BRANCHES[branchIdx].name,
+    items, subtotal, delivery, total:subtotal+delivery,
+    date: new Date().toLocaleString('en-IN'),
+    status:'Confirmed'
+  };
+  const orders = getOrders();
+  orders.unshift(order);
+  saveOrders(orders);
+  lastOrderId = orderId;
+  lastOrderCustomer = { name, phone, branch: BRANCHES[branchIdx].name, total: subtotal+delivery };
+  cart = {};
+  saveCart(); updateCartCount(); renderItems(); renderCartSidebar();
+  closeModal();
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartSidebar').classList.remove('open');
+  document.getElementById('successMsg').textContent = `Order #${orderId} placed for ${BRANCHES[branchIdx].name}. Total: ₹${subtotal+delivery}. We'll call you at ${phone}!`;
+  document.getElementById('successModal').classList.add('open');
+  notify('Order placed! 🎉','✅');
+}
+
+function closeSuccess(){
+  document.getElementById('successModal').classList.remove('open');
+}
+
+function trackOnWA(){
+  const c = lastOrderCustomer;
+  if(!c) return;
+  const msg = encodeURIComponent(`Hello Gaurav Confectionery! I placed order #${lastOrderId} for ₹${c.total} at ${c.branch}. Please confirm my order. – ${c.name}`);
+  window.open('https://wa.me/'+WHATSAPP+'?text='+msg,'_blank');
+  closeSuccess();
+}
+
+function orderViaWhatsApp(){
+  const keys = Object.keys(cart).map(Number).filter(id=>cart[id]>0);
+  if(keys.length===0){ notify('Cart is empty!','❌'); return; }
+  let subtotal=0;
+  let lines = keys.map(id=>{
+    const item = ITEMS.find(i=>i.id===id);
+    const qty = cart[id]; subtotal+=item.price*qty;
+    return `• ${item.name} ×${qty} = ₹${item.price*qty}`;
+  });
+  const delivery = subtotal>=500?0:30;
+  const msg = `Hello Gaurav Confectionery!\n\nI'd like to order from *${BRANCHES[selectedBranch].name}*:\n\n${lines.join('\n')}\n\nSubtotal: ₹${subtotal}\nDelivery: ${delivery===0?'FREE':'₹'+delivery}\n*Total: ₹${subtotal+delivery}*\n\nPlease confirm!`;
+  window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg),'_blank');
+}
+
+// ═══════════════════════════════════════
+//  BRANCHES RENDER
+// ═══════════════════════════════════════
+function renderBranches(){
+  const grid = document.getElementById('branchesGrid');
+  grid.innerHTML = BRANCHES.map(b=>`
+    <div class="branch-card ${b.id===selectedBranch?'selected':''}" onclick="selectBranchAndOrder(${b.id})">
+      <div class="branch-num">${b.id+1}</div>
+      <div class="branch-name">${b.icon} ${b.name}</div>
+      <div class="branch-addr">📍 ${b.addr}</div>
+      <span class="branch-tag ${b.tag}">${b.tagLabel}</span>
+      <div class="branch-hours">⏰ <strong>Hours:</strong> ${b.hours}</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;">📞 ${b.phone}</div>
+      <button class="sel-branch-btn" onclick="event.stopPropagation();selectBranchAndOrder(${b.id})">
+        ${b.id===selectedBranch?'✅ Currently Selected':'Order from this Branch'}
+      </button>
+    </div>`).join('');
+}
+
+function selectBranchAndOrder(idx){
+  selectedBranch = idx;
+  document.querySelectorAll('.branch-select-btn').forEach((b,i)=>{ b.classList.toggle('sel',i===idx); });
+  document.getElementById('orderingFrom').textContent = BRANCHES[idx].name;
+  document.getElementById('cartBranchName').textContent = BRANCHES[idx].name;
+  renderBranches(); renderItems();
+  notify('Switched to '+BRANCHES[idx].name,'🏪');
+}
+
+// ═══════════════════════════════════════
+//  ORDERS
+// ═══════════════════════════════════════
+function renderOrders(){
+  const orders = getOrders();
+  const container = document.getElementById('ordersContainer');
+  if(orders.length===0){
+    container.innerHTML = `<div class="no-orders">📭 No orders yet. Place your first order!</div>`; return;
+  }
+  container.innerHTML = orders.map(o=>`
+    <div class="order-item-row">
+      <div class="order-top">
+        <span class="order-id">#${o.id} · ${o.date}</span>
+        <span class="order-status ${o.status==='Confirmed'?'confirmed':'pending'}">${o.status}</span>
+        <span class="order-total">₹${o.total}</span>
+      </div>
+      <div style="font-size:13px;margin-top:6px;"><strong>${o.name}</strong> · ${o.phone} · ${o.branch}</div>
+      <div class="order-items-list">${o.items.map(i=>`${i.name} ×${i.qty}`).join(', ')}</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;">📍 ${o.addr}</div>
+    </div>`).join('');
+}
+
+function clearOrders(){
+  if(confirm('Clear all order history?')){ localStorage.removeItem('gc_orders'); renderOrders(); }
+}
+
+// ═══════════════════════════════════════
+//  ADMIN
+// ═══════════════════════════════════════
+function checkAdmin(){
+  const pwd = document.getElementById('adminPwdInput').value;
+  if(pwd==='admin123'){
+    adminUnlocked = true;
+    document.getElementById('adminGate').style.display='none';
+    document.getElementById('adminPanel').style.display='block';
+    renderAdminPanel();
+  } else {
+    document.getElementById('adminErr').style.display='block';
+  }
+}
+function lockAdmin(){
+  adminUnlocked = false;
+  document.getElementById('adminGate').style.display='block';
+  document.getElementById('adminPanel').style.display='none';
+  document.getElementById('adminPwdInput').value='';
+  document.getElementById('adminErr').style.display='none';
+}
+
+function selectStockBranch(idx){
+  stockBranchIdx = idx;
+  document.querySelectorAll('[id^=stockBranchBtn]').forEach((b,i)=>b.classList.toggle('active',i===idx));
+  renderAdminPanel();
+}
+
+function renderAdminPanel(){
+  if(!adminUnlocked) return;
+  const stock = getStock(stockBranchIdx);
+  // Summary
+  const total = RAW_MATERIALS.length;
+  let low=0, out=0;
+  RAW_MATERIALS.forEach(m=>{ if(stock[m.id]===0) out++; else if(stock[m.id]<m.minQty) low++; });
+  document.getElementById('stockSummary').innerHTML = `
+    <div class="stock-stat"><strong>${total}</strong><span>Total Materials</span></div>
+    <div class="stock-stat"><strong>${total-low-out}</strong><span>Well Stocked</span></div>
+    <div class="stock-stat warn"><strong>${low}</strong><span>Low Stock</span></div>
+    <div class="stock-stat danger"><strong>${out}</strong><span>Out of Stock</span></div>
+    <div class="stock-stat"><strong>${BRANCHES[stockBranchIdx].name}</strong><span>Branch</span></div>
+  `;
+  // Material dropdown
+  const sel = document.getElementById('stockMaterial');
+  sel.innerHTML = '<option value="">Select Material</option>'+RAW_MATERIALS.map(m=>`<option value="${m.id}">${m.name}</option>`).join('');
+  // Table
+  const tbody = document.getElementById('stockTableBody');
+  const maxQty = Math.max(...RAW_MATERIALS.map(m=>stock[m.id]||0), 1);
+  tbody.innerHTML = RAW_MATERIALS.map(m=>{
+    const qty = stock[m.id]||0;
+    const pct = Math.min(100, Math.round(qty/Math.max(m.minQty*3,1)*100));
+    const level = qty===0?'low':qty<m.minQty?'med':'high';
+    const status = qty===0?'out':qty<m.minQty?'low':'ok';
+    const statusLabel = qty===0?'Out of Stock':qty<m.minQty?'Low Stock':'In Stock';
+    return `<tr>
+      <td><strong>${m.name}</strong></td>
+      <td>
+        <div class="stock-level">
+          <span style="min-width:50px;font-weight:600;color:${qty===0?'#C62828':qty<m.minQty?'#E65100':'#2E7D32'}">${qty}</span>
+          <div class="stock-bar-wrap"><div class="stock-bar ${level}" style="width:${pct}%"></div></div>
+        </div>
+      </td>
+      <td>${m.unit}</td>
+      <td>${m.minQty}</td>
+      <td><span class="status-pill ${status}">${statusLabel}</span></td>
+      <td>
+        <div class="stock-action-btns">
+          <button class="s-btn plus" onclick="quickStock('${m.id}',10)">+10</button>
+          <button class="s-btn plus" onclick="quickStock('${m.id}',50)">+50</button>
+          <button class="s-btn minus" onclick="quickStock('${m.id}',-10)">-10</button>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+  // Product availability
+  renderProductAvail();
+}
+
+function quickStock(matId, delta){
+  const stock = getStock(stockBranchIdx);
+  stock[matId] = Math.max(0, (stock[matId]||0)+delta);
+  saveStock(stockBranchIdx, stock);
+  renderAdminPanel();
+  notify((delta>0?'Added ':'Reduced ')+Math.abs(delta)+' units of '+RAW_MATERIALS.find(m=>m.id===matId).name,'📦');
+}
+
+function updateStock(){
+  const matId = document.getElementById('stockMaterial').value;
+  const qty = parseFloat(document.getElementById('stockQty').value);
+  const action = document.getElementById('stockAction').value;
+  if(!matId){ notify('Please select a material','❌'); return; }
+  if(isNaN(qty)||qty<0){ notify('Please enter valid quantity','❌'); return; }
+  const stock = getStock(stockBranchIdx);
+  if(action==='add') stock[matId] = (stock[matId]||0)+qty;
+  else if(action==='set') stock[matId] = qty;
+  else if(action==='reduce') stock[matId] = Math.max(0,(stock[matId]||0)-qty);
+  saveStock(stockBranchIdx, stock);
+  renderAdminPanel();
+  const mat = RAW_MATERIALS.find(m=>m.id===matId);
+  notify(`${mat.name} updated to ${stock[matId]} ${mat.unit}`,'✅');
+  document.getElementById('stockQty').value='';
+}
+
+function renderProductAvail(){
+  const avail = getProductAvail(stockBranchIdx);
+  const grid = document.getElementById('productStockGrid');
+  grid.innerHTML = ITEMS.map(item=>{
+    const isAvail = avail[item.id]!==false;
+    return `<div style="background:var(--lightcream);border:1.5px solid var(--border);border-radius:12px;padding:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span style="font-size:22px;">${item.emoji}</span>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:var(--darkbrown);">${item.name}</div>
+          <div style="font-size:11px;color:var(--muted);">₹${item.price}/${item.unit}</div>
+        </div>
+      </div>
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+        <input type="checkbox" ${isAvail?'checked':''} onchange="toggleProductAvail(${item.id},this.checked)" style="width:18px;height:18px;accent-color:var(--saffron);cursor:pointer;"/>
+        <span style="font-size:12px;color:${isAvail?'#2E7D32':'#C62828'};font-weight:600;">${isAvail?'Available':'Unavailable'}</span>
+      </label>
+    </div>`;
+  }).join('');
+}
+
+function toggleProductAvail(itemId, checked){
+  const avail = getProductAvail(stockBranchIdx);
+  avail[itemId] = checked;
+  saveProductAvail(stockBranchIdx, avail);
+  renderItems();
+  const item = ITEMS.find(i=>i.id===itemId);
+  notify(`${item.name} marked as ${checked?'Available':'Unavailable'}`,'🍬');
+}
+
+// ═══════════════════════════════════════
+//  NOTIFICATION
+// ═══════════════════════════════════════
+let notifTimer;
+function notify(msg, icon='✅'){
+  clearTimeout(notifTimer);
+  document.getElementById('notifMsg').textContent = msg;
+  document.querySelector('.n-icon').textContent = icon+' ';
+  const el = document.getElementById('notification');
+  el.classList.add('show');
+  notifTimer = setTimeout(()=>el.classList.remove('show'), 3000);
+}
+
+// ═══════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════
+loadState();
+renderFilters();
+renderItems();
+renderBranches();
+updateCartCount();
+</script>
+</body>
+</html>
